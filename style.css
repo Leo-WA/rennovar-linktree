@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background: linear-gradient(-85deg,#9e7d22, #ffecb7);
+    background: linear-gradient(-85deg, #9e7d22, #ffecb7);
     color: var(--text-primary);
     display: flex;
     flex-direction: column;
@@ -51,12 +51,18 @@ body {
     .bg-text-animation {
         font-size: 6rem; /* Reduz o tamanho da fonte em telas menores */
     }
+    body {
+        padding-top: 5rem; /* Reduz o espaçamento no topo para telas menores */
+    }
 }
 
 /* Ajuste adicional para telas muito pequenas */
 @media (max-width: 480px) {
     .bg-text-animation {
         font-size: 3rem; /* Tamanho de fonte ainda menor para telas muito pequenas */
+    }
+    body {
+        padding-top: 5rem; /* Reduz ainda mais o espaçamento no topo para telas muito pequenas */
     }
 }
 
@@ -137,6 +143,8 @@ ul.links li:not(:last-child) {
 
 .links .link-text {
     text-align: center;
+}
+
 .text {
     color: var(--accent-text);
     cursor: pointer;
