@@ -1,13 +1,13 @@
 :root {
-    --primary-bg: #1a181d;
-    --text-primary: #e1e1f1;
+    --primary-bg: #e7d7a9;
+    --text-primary: #47341f;
     --accent-text: #f3f3f3;
     --link-hover: white;
-    --secondary-bg: #aa8348;
+    --secondary-bg: #47341f;
     --shadow-color: rgba(255, 174, 0, 0.1);
     --toast-bg: white;
     --toast-text: #0f0f25;
-    --card-bg: #a07320;
+    --card-bg:;
 }
 
 * {
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background-color: var(--primary-bg);
+    background: linear-gradient(-85deg,#9e7d22, #ffecb7);
     color: var(--text-primary);
     display: flex;
     flex-direction: column;
@@ -108,7 +108,7 @@ ul.links li:not(:last-child) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--card-bg);
+    background: linear-gradient(90deg, #917015, #e0be61);
     gap: 1rem;
     padding: 1rem;
     border-radius: 20px;
