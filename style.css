@@ -1,0 +1,200 @@
+:root {
+    --primary-bg: #1a181d;
+    --text-primary: #e1e1f1;
+    --accent-text: #f3f3f3;
+    --link-hover: white;
+    --secondary-bg: #aa8348;
+    --shadow-color: rgba(255, 174, 0, 0.1);
+    --toast-bg: white;
+    --toast-text: #0f0f25;
+    --card-bg: #a07320;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Outfit", sans-serif;
+    padding-top: 15rem; /* Aumentado para criar espaço para o texto animado */
+    padding-bottom: 2rem;
+    gap: 1rem;
+}
+
+.bg-text-animation {
+    position: absolute;
+    top: 5rem;
+    font-size: 12rem; /* Font size padrão para telas grandes */
+    text-transform: uppercase;
+    font-weight: 900;
+    -webkit-text-stroke: 2px var(--secondary-bg);
+    -webkit-text-fill-color: transparent;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 100; /* Ajustado para garantir que esteja no topo */
+    user-select: none;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .bg-text-animation {
+        font-size: 6rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 480px) {
+    .bg-text-animation {
+        font-size: 3rem; /* Tamanho de fonte ainda menor para telas muito pequenas */
+    }
+}
+
+.my-photo {
+    width: 10rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 5rem; /* Ajuste para empurrar para baixo e evitar sobreposição */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sosmed i {
+    font-size: 1.5rem;
+    color: var(--accent-text);
+}
+
+.sosmed i:hover {
+    color: var(--link-hover);
+}
+
+.sosmed a:not(:last-child) {
+    margin-right: 1rem;
+}
+
+ul {
+    width: 80%;
+    max-width: 40rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul.links li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.links {
+    margin-top: 1rem;
+}
+
+.link-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 8px 10px 0 var(--shadow-color);
+    border: 2px solid var(--card-bg);
+    font-weight: 600;
+}
+
+.link-card:hover {
+    border: 2px solid var(--link-hover);
+}
+
+.links .link-icon {
+    background-image: linear-gradient(to top, purple, cyan);
+    padding: 0.5rem;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links .link-icon i {
+    color: var(--link-hover);
+}
+
+.links .link-text {
+    text-align: center;
+.text {
+    color: var(--accent-text);
+    cursor: pointer;
+    padding: 10px;
+}
+
+.copyright {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the content vertically */
+    gap: 0.5rem;
+    color: var(--accent-text);
+    font-size: 0.75rem;
+}
+
+.copyright img {
+    gap: 300px;
+    width: 4rem;
+    display: block; /* Ensures the image behaves as a block-level element */
+    margin: 0 auto; /* Centers the image horizontally within the container */
+}
+
+#toast {
+    width: max-content;
+    position: fixed;
+    top: 0;
+}
+
+.toast-container {
+    background-color: var(--toast-bg);
+    color: var(--toast-text);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    animation: muncul 300ms ease-in-out;
+}
+
+.toast-gone {
+    animation: hilang 1s ease-in-out 1s;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hilang {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
